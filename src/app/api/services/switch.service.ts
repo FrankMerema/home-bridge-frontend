@@ -6,7 +6,7 @@ import {Switch} from '../models/switch.model';
 @Injectable({
   providedIn: 'root'
 })
-export class SensorService {
+export class SwitchService {
 
   constructor(private http: HttpClient) {
   }

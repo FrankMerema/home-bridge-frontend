@@ -1,0 +1,44 @@
+<section>
+  <form (ngSubmit)="onSensorSubmit(); sensorForm.reset()" #sensorForm="ngForm">
+    <label for="host">Host</label>
+    <select id="host"
+            [(ngModel)]="sensorModel.host"
+            (ngModelChange)="onHostSelection($event)"
+            name="target">
+      <option *ngFor="let host of hosts" [ngValue]="host.id">{{host.name}}</option>
+    </select>
+
+    <label for="name">Name</label>
+    <input type="text"
+           id="name"
+           required
+           [(ngModel)]="sensorModel.name"
+           name="name"
+           #name="ngModel">
+    <div [hidden]="name.valid || name.pristine">
+      Name is required
+    </div>
+
+    <label for="pin">GPIO pin</label>
+    <input type="number"
+           id="pin"
+           required
+           [(ngModel)]="sensorModel.pin"
+           name="pin"
+           #pin="ngModel">
+    <div [hidden]="pin.valid || pin.pristine">
+      GPIO pin is required
+    </div>
+
+    <label for="target">Target hardware</label>
+    <select id="target"
+            [(ngModel)]="sensorModel.targetId"
+            name="target">
+      <option *ngFor="let switch of switches" [value]="switch.id">{{switch.name}}</option>
+    </select>
+
+    <button type="submit" [disabled]="!sensorForm.form.valid">Submit</button>
+  </form>
+
+  {{ sensorModel | json }}
+</section>

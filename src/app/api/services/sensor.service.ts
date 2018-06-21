@@ -19,8 +19,8 @@ export class SensorService {
     return this.http.put<Sensor>(`/api/sensor/${sensorId}/target/${targetId}`, null);
   }
 
-  addSensor(pin: number, host: string, name: string, targetId?: string): Observable<Sensor> {
-    const sensor = {pin: pin, host: host, name: name, targetId: targetId};
+  addSensor(pin: number, hostId: string, name: string, targetId?: string): Observable<Sensor> {
+    const sensor = {pin: pin, hostId: hostId, name: name, targetId: targetId};
 
     return this.http.post<Sensor>(`/api/sensor`, sensor);
   }

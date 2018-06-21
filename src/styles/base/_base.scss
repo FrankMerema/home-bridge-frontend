@@ -1,0 +1,31 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  line-height: 1.5;
+  width: 100%;
+}
+
+figure {
+  margin: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+table {
+  width: 100%;
+}

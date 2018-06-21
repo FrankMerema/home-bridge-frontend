@@ -1,0 +1,41 @@
+<section>
+  <form (ngSubmit)="onSwitchSubmit(); switchForm.reset()" #switchForm="ngForm">
+    <label for="host">Host</label>
+    <select id="host"
+            required
+            [(ngModel)]="switchModel.host"
+            name="target"
+            #target="ngModel">
+      <option *ngFor="let host of hosts" [ngValue]="host.id">{{host.name}}</option>
+    </select>
+    <div [hidden]="target.valid || target.pristine">
+      Target is required
+    </div>
+
+    <label for="name">Name</label>
+    <input type="text"
+           id="name"
+           required
+           [(ngModel)]="switchModel.name"
+           name="name"
+           #name="ngModel">
+    <div [hidden]="name.valid || name.pristine">
+      Name is required
+    </div>
+
+    <label for="pin">GPIO pin</label>
+    <input type="number"
+           id="pin"
+           required
+           [(ngModel)]="switchModel.pin"
+           name="pin"
+           #pin="ngModel">
+    <div [hidden]="pin.valid || pin.pristine">
+      GPIO pin is required
+    </div>
+
+    <button type="submit" [disabled]="!switchForm.form.valid">Submit</button>
+  </form>
+
+  {{ switchModel | json }}
+</section>
