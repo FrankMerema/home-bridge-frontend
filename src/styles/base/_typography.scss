@@ -1,0 +1,76 @@
+/* stylelint-disable-next-line selector-list-comma-newline-after */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+h1,
+.h1 {
+  font-family: $hb-font-family;
+  font-size: 40px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h2,
+.h2 {
+  font-family: $hb-font-family;
+  font-size: 24px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-bottom: 0.75rem;
+}
+
+h3,
+.h3 {
+  font-family: $hb-font-family;
+  font-size: 20px;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 1.5;
+}
+
+h4,
+.h4 {
+  font-family: $hb-font-family;
+  font-size: $hb-font-size;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 1.22;
+}
+
+p {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+a {
+  cursor: pointer;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: $hb-font-family;
+}

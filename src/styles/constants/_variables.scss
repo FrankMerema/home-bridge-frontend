@@ -1,4 +1,12 @@
-$hb-primary-color: #fff;
+$hb-font-family: Montserrat, helveticaneue, helvetica neue, helvetica, arial, lucida grande, sans-serif !default;
+$hb-font-size: 18px !default;
+
+$hb-white: #fff !default;
+
+$hb-input-not-active: #757b84 !default;
+
+$hb-gutter-size: 16px !default;
+$hb-gutter-size-small: 8px !default;
 
 // Login screen
-$hb-login-background-color: linear-gradient(to right, #2c4259, #1b3045);
+$hb-login-background-color: linear-gradient(to right, #2c4259, #1b3045) !default;

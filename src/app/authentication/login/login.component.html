@@ -1,3 +1,22 @@
-<p>
-  login works!
-</p>
+<main>
+  <header>
+    <img src="">
+  </header>
+  <section>
+    <form (ngSubmit)="onLoginSubmit()" #loginForm="ngForm">
+      <div class="floating-label-input">
+        <input type="text" name="fullname" id="fullname" placeholder="Name">
+        <label for="fullname">Name</label>
+      </div>
+      <button type="submit" class="btn btn-login">
+        Login
+      </button>
+    </form>
+  </section>
+  <footer>
+    <a>forget password?</a>
+
+    <span>Don't have a account?</span>
+    <a>Sign up</a>
+  </footer>
+</main>

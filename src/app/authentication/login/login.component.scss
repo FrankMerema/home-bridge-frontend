@@ -1,7 +1,10 @@
 @import 'variables';
 
 :host {
+  align-items: center;
   background: $hb-login-background-color;
+  color: $hb-white;
   display: flex;
+  justify-content: center;
   height: 100%;
 }

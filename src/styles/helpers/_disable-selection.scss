@@ -1,0 +1,12 @@
+/* stylelint-disable */
+// This class is used to disable selection on all browsers.
+// It's needed to prevent text selection while dragging and to prevent the "Save image" context menu on iOS.
+.disable-selection {
+  -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  user-select: none;
+}
+/* stylelint-enable */

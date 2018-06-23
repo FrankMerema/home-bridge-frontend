@@ -24,4 +24,7 @@ export class LoginComponent implements OnInit {
 
 
   // TODO AUTHENTICATE
+  onLoginSubmit(): void {
+    console.log('login :)');
+  }
 }
