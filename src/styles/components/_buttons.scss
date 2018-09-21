@@ -1,3 +1,39 @@
-.btn {
+@import 'variables';
 
+.btn {
+  align-content: center;
+  align-items: center;
+  background: none;
+  border: 0;
+  border-radius: $hb-gutter-size-small;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 36px;
+  margin: 0;
+  outline: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: 200ms background linear;
+  user-select: none;
+  vertical-align: baseline;
+  white-space: nowrap;
+
+  &:active:not([disabled]) {
+    transform: translateY(2px);
+  }
+
+  &[disabled] {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  &.btn-primary {
+    background: linear-gradient(to right, #1dbfd5, #5dccc1);
+    color: $hb-white;
+    font-size: $hb-font-size;
+    font-weight: 700;
+    width: 100%;
+  }
 }

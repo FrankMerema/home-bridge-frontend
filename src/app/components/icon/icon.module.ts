@@ -1,15 +1,13 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
-import {AuthGuard} from './auth.guard';
+import {IconComponent} from './icon.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  providers: [
-    AuthGuard
-  ],
-  declarations: []
+  declarations: [IconComponent],
+  exports: [IconComponent]
 })
-export class AuthenticationModule {
+export class IconModule {
 }

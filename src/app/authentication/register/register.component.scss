@@ -10,7 +10,7 @@
   height: 100%;
 }
 
-.login-form {
+.register-form {
   margin: $hb-gutter-size;
 
   .floating-label-input {
@@ -33,25 +33,14 @@
   }
 }
 
-.login-footer {
+.register-footer {
   align-items: center;
   color: $hb-input-not-active;
   display: flex;
   flex-direction: column;
   font-size: 16px;
 
-  .password-forget {
-    padding-bottom: $hb-gutter-size;
-    border-bottom: 1px solid $hb-input-not-active;
-    text-align: center;
-    width: 100%;
-
-    &:active {
-      color: $hb-white;
-    }
-  }
-
-  .register {
+  .login {
     margin-top: $hb-gutter-size;
 
     &-link {

@@ -3,7 +3,7 @@
     <img src="">
   </header>
   <section>
-    <form class="login-form" (ngSubmit)="onLoginSubmit()" #loginForm="ngForm">
+    <form class="register-form" (ngSubmit)="onRegisterSubmit()" #registerForm="ngForm">
       <div class="floating-label-input">
         <input type="text" name="username" id="username" placeholder="Username">
         <label for="username">Username</label>
@@ -14,17 +14,21 @@
         <label for="password">Password</label>
         <hb-icon [name]="'password'"></hb-icon>
       </div>
+      <div class="floating-label-input">
+        <input type="password" name="password-repeat" id="password-repeat" placeholder="Repeat password"
+               autocomplete="false">
+        <label for="password-repeat">Repeat password</label>
+        <hb-icon [name]="'password'"></hb-icon>
+      </div>
       <button type="submit" class="btn btn-primary">
-        LOG IN
+        REGISTER
       </button>
     </form>
   </section>
-  <footer class="login-footer">
-    <a class="password-forget">Forget password?</a>
-
-    <div class="register">
-      <span>Don't have a account?</span>
-      <a class="register-link" [routerLink]="['../register']">Sign up</a>
+  <footer class="register-footer">
+    <div class="login">
+      <span>Already have a account?</span>
+      <a class="login-link" [routerLink]="['../login']">Log in</a>
     </div>
   </footer>
 </main>

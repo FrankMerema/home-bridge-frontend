@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {IconModule} from '../../components';
-import {LoginComponent} from './login.component';
+import {RegisterComponent} from './register.component';
 
 @NgModule({
   imports: [
@@ -12,8 +12,8 @@ import {LoginComponent} from './login.component';
     IconModule,
     RouterModule
   ],
-  declarations: [LoginComponent],
-  exports: [LoginComponent]
+  declarations: [RegisterComponent],
+  exports: [RegisterComponent]
 })
-export class LoginModule {
+export class RegisterModule {
 }
