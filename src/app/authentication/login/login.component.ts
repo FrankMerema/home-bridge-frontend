@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParamMap.subscribe(queryParams => {
-      this.returnUrl = queryParams.get('returnUrl');
+      this.returnUrl = queryParams.get('returnUrl') || '/';
     });
   }
 
