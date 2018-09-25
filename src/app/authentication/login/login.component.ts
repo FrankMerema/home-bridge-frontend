@@ -18,13 +18,13 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.route.queryParamMap.subscribe(queryParams => {
       this.returnUrl = queryParams.get('returnUrl');
-      console.log(this.returnUrl);
     });
   }
 
-
-  // TODO AUTHENTICATE
-  onLoginSubmit(): void {
-    console.log('login :)');
+  onLoginSubmit(username: string, password: string): void {
+    this.authenticationService.authenticate(username, password)
+      .subscribe(user => {
+        this.router.navigate([this.returnUrl]);
+      });
   }
 }

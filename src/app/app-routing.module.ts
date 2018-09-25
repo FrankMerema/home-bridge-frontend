@@ -25,7 +25,8 @@ const routes: Routes = [{
   component: LoginComponent
 }, {
   path: 'register',
-  component: RegisterComponent
+  component: RegisterComponent,
+  canActivate: [AuthGuard]
 }, {
   path: '**',
   redirectTo: ''

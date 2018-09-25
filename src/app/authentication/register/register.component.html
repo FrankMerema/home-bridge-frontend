@@ -3,24 +3,41 @@
     <img src="">
   </header>
   <section>
-    <form class="register-form" (ngSubmit)="onRegisterSubmit()" #registerForm="ngForm">
+    <form class="register-form" [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
       <div class="floating-label-input">
-        <input type="text" name="username" id="username" placeholder="Username">
+        <input type="text"
+               id="username"
+               formControlName="username"
+               placeholder="Username">
         <label for="username">Username</label>
         <hb-icon [name]="'user-profile'"></hb-icon>
       </div>
       <div class="floating-label-input">
-        <input type="password" name="password" id="password" placeholder="Password" autocomplete="false">
+        <input type="password"
+               id="password"
+               placeholder="Password"
+               autocomplete="false"
+               formControlName="password">
         <label for="password">Password</label>
         <hb-icon [name]="'password'"></hb-icon>
       </div>
       <div class="floating-label-input">
-        <input type="password" name="password-repeat" id="password-repeat" placeholder="Repeat password"
-               autocomplete="false">
+        <input type="password"
+               id="password-repeat"
+               placeholder="Repeat password"
+               autocomplete="false"
+               formControlName="passwordRepeated">
         <label for="password-repeat">Repeat password</label>
         <hb-icon [name]="'password'"></hb-icon>
       </div>
-      <button type="submit" class="btn btn-primary">
+
+      <div *ngIf="registerForm.errors?.invalid && (registerForm.touched || registerForm.dirty)">
+        Passwords don't match!
+      </div>
+
+      <button type="submit"
+              [disabled]="!registerForm.dirty || !registerForm.valid"
+              class="btn btn-primary">
         REGISTER
       </button>
     </form>

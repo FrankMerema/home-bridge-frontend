@@ -3,14 +3,14 @@
     <img src="">
   </header>
   <section>
-    <form class="login-form" (ngSubmit)="onLoginSubmit()" #loginForm="ngForm">
+    <form class="login-form" (ngSubmit)="onLoginSubmit(username.value, password.value)" #loginForm="ngForm">
       <div class="floating-label-input">
-        <input type="text" name="username" id="username" placeholder="Username">
+        <input #username type="text" name="username" id="username" placeholder="Username">
         <label for="username">Username</label>
         <hb-icon [name]="'user-profile'"></hb-icon>
       </div>
       <div class="floating-label-input">
-        <input type="password" name="password" id="password" placeholder="Password" autocomplete="false">
+        <input #password type="password" name="password" id="password" placeholder="Password" autocomplete="false">
         <label for="password">Password</label>
         <hb-icon [name]="'password'"></hb-icon>
       </div>
@@ -19,12 +19,12 @@
       </button>
     </form>
   </section>
-  <footer class="login-footer">
-    <a class="password-forget">Forget password?</a>
+  <!--<footer class="login-footer">-->
+    <!--<a class="password-forget">Forget password?</a>-->
 
-    <div class="register">
-      <span>Don't have a account?</span>
-      <a class="register-link" [routerLink]="['../register']">Sign up</a>
-    </div>
-  </footer>
+    <!--<div class="register">-->
+      <!--<span>Don't have a account?</span>-->
+      <!--<a class="register-link" [routerLink]="['../register']">Sign up</a>-->
+    <!--</div>-->
+  <!--</footer>-->
 </main>

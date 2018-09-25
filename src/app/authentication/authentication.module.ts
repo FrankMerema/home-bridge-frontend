@@ -4,8 +4,7 @@ import {AuthGuard} from './auth.guard';
 
 @NgModule({
   imports: [
-    CommonModule
-  ],
+    CommonModule],
   providers: [
     AuthGuard
   ],

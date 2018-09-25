@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '@angular/router';
-import {Observable, of} from 'rxjs/index';
+import {Observable, of} from 'rxjs';
 import {catchError, map} from 'rxjs/internal/operators';
 import {AuthenticationService} from '../api/services/authentication.service';
 
