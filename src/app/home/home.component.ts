@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {zip} from 'rxjs/index';
 import {Host} from '../api/models/host.model';
 import {Sensor} from '../api/models/sensor.model';
 import {Switch} from '../api/models/switch.model';
+import {AuthenticationService} from '../api/services/authentication.service';
 import {HostService} from '../api/services/host.service';
 import {SensorService} from '../api/services/sensor.service';
 import {SwitchService} from '../api/services/switch.service';
@@ -23,7 +25,9 @@ export class HomeComponent implements OnInit {
 
   constructor(private hostService: HostService,
               private sensorService: SensorService,
-              private switchService: SwitchService) {
+              private switchService: SwitchService,
+              private authenticationService: AuthenticationService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -47,4 +51,10 @@ export class HomeComponent implements OnInit {
     console.log(selectedItem);
   }
 
+  logout(): void {
+    this.authenticationService.logout()
+      .subscribe(() => {
+        this.router.navigate(['login']);
+      });
+  }
 }

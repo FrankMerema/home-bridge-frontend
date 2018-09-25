@@ -19,7 +19,7 @@ export class RegisterComponent {
   }
 
   onRegisterSubmit(): void {
-    this.authenticationService.register(this.registerForm.get('username').value, this.registerForm.get('password').value)
+    this.authenticationService.register(this.registerForm.value)
       .subscribe(user => {
         console.log(user);
       });

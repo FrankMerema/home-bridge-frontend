@@ -24,8 +24,8 @@ export class AuthenticationService {
     return this.http.post<User>(`/api/user/authenticate`, {username: username, password: password});
   }
 
-  register(username: string, password: string): Observable<User> {
-    return this.http.post<User>(`/api/user`, {username: username, password: password});
+  register(user: {username: string, password: string, passwordRepeated: string}): Observable<User> {
+    return this.http.post<User>(`/api/user`, user);
   }
 
   logout(): Observable<boolean> {
