@@ -2,6 +2,17 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 import {AuthenticationService} from '../../api/services/authentication.service';
 
+export const checkEqualPasswordValidator: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
+  const password = control.get('password');
+  const passwordRepeated = control.get('passwordRepeated');
+
+  if (password.pristine || passwordRepeated.pristine) {
+    return null;
+  }
+
+  return password && passwordRepeated && password.value !== passwordRepeated.value ? {invalid: true} : null;
+};
+
 @Component({
   selector: 'hb-register',
   templateUrl: './register.component.html',
@@ -39,14 +50,3 @@ export class RegisterComponent implements OnInit {
   }
 
 }
-
-export const checkEqualPasswordValidator: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
-  const password = control.get('password');
-  const passwordRepeated = control.get('passwordRepeated');
-
-  if (password.pristine || passwordRepeated.pristine) {
-    return null;
-  }
-
-  return password && passwordRepeated && password.value !== passwordRepeated.value ? {invalid: true} : null;
-};

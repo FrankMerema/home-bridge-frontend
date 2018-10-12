@@ -37,12 +37,12 @@ input {
 
   > label {
     @include position(absolute, 0px 0 0 0px);
-    display: block;
-    width: 100%;
-    margin-bottom: 0;
-    color: $hb-input-not-active;
     border: 1px solid transparent;
-    transition: all .1s ease-in-out;
+    color: $hb-input-not-active;
+    display: block;
+    margin-bottom: 0;
+    transition: all 100ms ease-in-out;
+    width: 100%;
   }
 
   input {
@@ -53,17 +53,18 @@ input {
     }
 
     &:not(:placeholder-shown) {
-      padding-top: calc(12px + 12px * (2 / 3));
       padding-bottom: 4px;
+      padding-top: calc(12px + 12px * (2 / 3));
 
       ~ label {
-        padding-top: 4px;
-        padding-bottom: 4px;
-        font-size: 12px;
         color: $hb-input-not-active;
+        font-size: 12px;
+        padding-bottom: 4px;
+        padding-top: 4px;
       }
     }
 
+    /* stylelint-disable */
     &::-webkit-input-placeholder {
       color: transparent;
     }
@@ -74,5 +75,6 @@ input {
     &::placeholder {
       color: transparent;
     }
+    /* stylelint-enable */
   }
 }
