@@ -8,6 +8,9 @@ import {AuthenticationService} from '../../api/services/authentication.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+  error: string;
+
   private returnUrl: string;
 
   constructor(private route: ActivatedRoute,
@@ -25,6 +28,8 @@ export class LoginComponent implements OnInit {
     this.authenticationService.authenticate(username, password)
       .subscribe(user => {
         this.router.navigate([this.returnUrl]);
+      }, response => {
+        this.error = response.error;
       });
   }
 }

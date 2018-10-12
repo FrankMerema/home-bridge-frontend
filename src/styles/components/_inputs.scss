@@ -18,6 +18,14 @@ input {
   }
 }
 
+.error-message {
+  color: $hb-input-error-message;
+  font-size: 14px;
+  padding: $hb-gutter-size-small;
+  text-align: center;
+  width: 100%;
+}
+
 .floating-label-input {
   margin-bottom: 1rem;
   position: relative;
