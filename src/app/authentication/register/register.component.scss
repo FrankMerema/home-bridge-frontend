@@ -6,48 +6,63 @@
   background: $hb-login-background-color;
   color: $hb-white;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 100%;
-}
 
-.register-form {
-  margin: $hb-gutter-size;
+  .register-header {
+    display: flex;
+    flex-direction: column;
+  }
 
-  .floating-label-input {
-    input:focus {
-      ~ hb-icon {
-        fill: $hb-white;
+  .register-content {
+    display: flex;
+    flex-direction: column;
+
+    .register-form {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin: $hb-gutter-size;
+
+      .floating-label-input {
+        input:focus {
+          ~ hb-icon {
+            fill: $hb-white;
+          }
+        }
+
+        hb-icon {
+          @include size(14px);
+          @include position(absolute, 18px 0 0 12px);
+          fill: $hb-input-not-active;
+        }
+
+        > input,
+        > label {
+          padding-left: $hb-gutter-size * 2;
+        }
       }
     }
+  }
 
-    hb-icon {
-      @include size(14px);
-      @include position(absolute, 18px 0 0 12px);
-      fill: $hb-input-not-active;
-    }
+  .register-footer {
+    align-items: center;
+    color: $hb-input-not-active;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
 
-    > input,
-    > label {
-      padding-left: $hb-gutter-size * 2;
+    .login {
+      margin-top: $hb-gutter-size;
+
+      &-link {
+        color: $hb-white;
+        font-weight: 700;
+        margin-left: $hb-gutter-size-small;
+        text-decoration: none;
+      }
     }
   }
-}
 
-.register-footer {
-  align-items: center;
-  color: $hb-input-not-active;
-  display: flex;
-  flex-direction: column;
-  font-size: 16px;
-
-  .login {
-    margin-top: $hb-gutter-size;
-
-    &-link {
-      color: $hb-white;
-      font-weight: 700;
-      margin-left: $hb-gutter-size-small;
-      text-decoration: none;
-    }
-  }
 }

@@ -1,51 +1,53 @@
-<main>
-  <header>
-    <img src="">
-  </header>
-  <section>
-    <form class="register-form" [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
-      <div class="floating-label-input">
-        <input type="text"
-               id="username"
-               formControlName="username"
-               placeholder="Username">
-        <label for="username">Username</label>
-        <hb-icon [name]="'user-profile'"></hb-icon>
-      </div>
-      <div class="floating-label-input">
-        <input type="password"
-               id="password"
-               placeholder="Password"
-               autocomplete="false"
-               formControlName="password">
-        <label for="password">Password</label>
-        <hb-icon [name]="'password'"></hb-icon>
-      </div>
-      <div class="floating-label-input">
-        <input type="password"
-               id="password-repeat"
-               placeholder="Repeat password"
-               autocomplete="false"
-               formControlName="passwordRepeated">
-        <label for="password-repeat">Repeat password</label>
-        <hb-icon [name]="'password'"></hb-icon>
-      </div>
-
-      <div *ngIf="registerForm.errors?.invalid && (registerForm.touched || registerForm.dirty)">
-        Passwords don't match!
-      </div>
-
-      <button type="submit"
-              [disabled]="!registerForm.dirty || !registerForm.valid"
-              class="btn btn-primary">
-        REGISTER
-      </button>
-    </form>
-  </section>
-  <footer class="register-footer">
-    <div class="login">
-      <span>Already have a account?</span>
-      <a class="login-link" [routerLink]="['../login']">Log in</a>
+<header class="register-header">
+  <h2>Header title</h2>
+  <img src="">
+</header>
+<section class="register-content">
+  <form class="register-form" [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+    <div class="floating-label-input">
+      <input type="text"
+             id="username"
+             formControlName="username"
+             placeholder="Username">
+      <label for="username">Username</label>
+      <hb-icon [name]="'user-profile'"></hb-icon>
     </div>
-  </footer>
-</main>
+    <div class="floating-label-input">
+      <input type="password"
+             id="password"
+             placeholder="Password"
+             autocomplete="false"
+             formControlName="password">
+      <label for="password">Password</label>
+      <hb-icon [name]="'password'"></hb-icon>
+    </div>
+    <div class="floating-label-input">
+      <input type="password"
+             id="password-repeat"
+             placeholder="Repeat password"
+             autocomplete="false"
+             formControlName="passwordRepeated">
+      <label for="password-repeat">Repeat password</label>
+      <hb-icon [name]="'password'"></hb-icon>
+    </div>
+
+    <span class="error-message" *ngIf="error">
+        {{error}}
+    </span>
+    <span class="error-message" *ngIf="registerForm.errors?.invalid && (registerForm.touched || registerForm.dirty)">
+        Passwords don't match!
+      </span>
+
+    <button type="submit"
+            [disabled]="!registerForm.dirty || !registerForm.valid"
+            class="btn btn-primary">
+      REGISTER
+    </button>
+  </form>
+</section>
+<footer class="register-footer">
+  <div class="login">
+    <span>Already have a account?</span>
+    <a class="login-link" [routerLink]="['../login']">Log in</a>
+  </div>
+</footer>
