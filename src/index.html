@@ -8,8 +8,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <style>
+    html, body, hb-root {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    .loading {
+      align-items: center;
+      background: linear-gradient(to right, #2c4259, #1b3045);
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      height: 100%;
+    }
+  </style>
 </head>
 <body class="disable-selection">
-  <hb-root>Loading...</hb-root>
+<hb-root><span class="loading">Loading...</span></hb-root>
 </body>
 </html>
