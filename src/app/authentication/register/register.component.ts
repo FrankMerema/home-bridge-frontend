@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 import {AuthenticationService} from '../../api/services/authentication.service';
 
 export const checkEqualPasswordValidator: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
@@ -24,7 +25,8 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
 
-  constructor(private authenticationService: AuthenticationService) {
+  constructor(private authenticationService: AuthenticationService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -43,7 +45,7 @@ export class RegisterComponent implements OnInit {
   onRegisterSubmit(): void {
     this.authenticationService.register(this.registerForm.value)
       .subscribe(user => {
-        console.log(user);
+        this.router.navigate(['/']);
       }, response => {
         this.error = response.error;
       });
