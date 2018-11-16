@@ -1,32 +1,33 @@
+<section class="login-content">
   <header class="login-header">
     <h2>Header title</h2>
     <img src="">
   </header>
-  <section class="login-content">
-    <form class="login-form" (ngSubmit)="onLoginSubmit(username.value, password.value)" #loginForm="ngForm">
-      <div class="floating-label-input">
-        <input #username type="text" name="username" id="username" placeholder="Username">
-        <label for="username">Username</label>
-        <hb-icon [name]="'user-profile'"></hb-icon>
-      </div>
-      <div class="floating-label-input">
-        <input #password type="password" name="password" id="password" placeholder="Password" autocomplete="false">
-        <label for="password">Password</label>
-        <hb-icon [name]="'password'"></hb-icon>
-      </div>
-      <span class="error-message" *ngIf="error">
+  <form class="login-form" (ngSubmit)="onLoginSubmit(username.value, password.value)" #loginForm="ngForm"
+        autocomplete="off">
+    <div class="floating-label-input">
+      <input #username type="text" name="username" id="username" placeholder="Username">
+      <label for="username">Username</label>
+      <hb-icon [name]="'user-profile'"></hb-icon>
+    </div>
+    <div class="floating-label-input">
+      <input #password type="password" name="password" id="password" placeholder="Password" autocomplete="false">
+      <label for="password">Password</label>
+      <hb-icon [name]="'password'"></hb-icon>
+    </div>
+    <span class="error-message" *ngIf="error">
         {{ error }}
       </span>
-      <button type="submit" class="btn btn-primary">
-        LOG IN
-      </button>
-    </form>
-  </section>
-  <!--<footer class="login-footer">-->
-  <!--<a class="password-forget">Forget password?</a>-->
+    <button type="submit" class="btn btn-primary">
+      LOG IN
+    </button>
+  </form>
+</section>
+<!--<footer class="login-footer">-->
+<!--<a class="password-forget">Forget password?</a>-->
 
-  <!--<div class="register">-->
-  <!--<span>Don't have a account?</span>-->
-  <!--<a class="register-link" [routerLink]="['../register']">Sign up</a>-->
-  <!--</div>-->
-  <!--</footer>-->
+<!--<div class="register">-->
+<!--<span>Don't have a account?</span>-->
+<!--<a class="register-link" [routerLink]="['../register']">Sign up</a>-->
+<!--</div>-->
+<!--</footer>-->

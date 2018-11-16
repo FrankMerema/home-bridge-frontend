@@ -10,20 +10,21 @@
   height: 100%;
   justify-content: center;
 
-  .register-header {
-    display: flex;
-    flex-direction: column;
-  }
-
   .register-content {
     display: flex;
     flex-direction: column;
+    margin: $hb-gutter-size;
+
+    .register-header {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
 
     .register-form {
       align-items: center;
       display: flex;
       flex-direction: column;
-      margin: $hb-gutter-size;
 
       .floating-label-input {
         input:focus {
@@ -44,25 +45,24 @@
         }
       }
     }
-  }
 
-  .register-footer {
-    align-items: center;
-    color: $hb-input-not-active;
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
+    .register-footer {
+      align-items: center;
+      color: $hb-input-not-active;
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
 
-    .login {
-      margin-top: $hb-gutter-size;
+      .login {
+        margin-top: $hb-gutter-size;
 
-      &-link {
-        color: $hb-white;
-        font-weight: 700;
-        margin-left: $hb-gutter-size-small;
-        text-decoration: none;
+        &-link {
+          color: $hb-white;
+          font-weight: 700;
+          margin-left: $hb-gutter-size-small;
+          text-decoration: none;
+        }
       }
     }
   }
-
 }

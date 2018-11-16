@@ -10,20 +10,25 @@
   height: 100%;
   justify-content: center;
 
-  .login-header {
-    display: flex;
-    flex-direction: column;
-  }
-
   .login-content {
     display: flex;
     flex-direction: column;
+    margin: $hb-gutter-size;
+    max-width: 260px;
+
+    .login-header {
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        text-align: center;
+      }
+    }
 
     .login-form {
       align-items: center;
       display: flex;
       flex-direction: column;
-      margin: $hb-gutter-size;
 
       .floating-label-input {
         input:focus {

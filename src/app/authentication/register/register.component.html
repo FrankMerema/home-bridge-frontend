@@ -1,9 +1,9 @@
-<header class="register-header">
-  <h2>Header title</h2>
-  <img src="">
-</header>
 <section class="register-content">
-  <form class="register-form" [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+  <header class="register-header">
+    <h2>Header title</h2>
+    <img src="">
+  </header>
+  <form class="register-form" [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()" autocomplete="off">
     <div class="floating-label-input">
       <input type="text"
              id="username"
@@ -44,10 +44,10 @@
       REGISTER
     </button>
   </form>
+  <footer class="register-footer">
+    <div class="login">
+      <span>Already have a account?</span>
+      <a class="login-link" [routerLink]="['../login']">Log in</a>
+    </div>
+  </footer>
 </section>
-<footer class="register-footer">
-  <div class="login">
-    <span>Already have a account?</span>
-    <a class="login-link" [routerLink]="['../login']">Log in</a>
-  </div>
-</footer>
