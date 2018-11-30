@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test --source-map=false",
     "lint": "npm-run-all lint:*",
     "lint:ts": "ng lint",

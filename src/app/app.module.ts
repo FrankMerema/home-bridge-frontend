@@ -6,7 +6,7 @@ import {ApiModule} from './api/services/api.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {AuthenticationModule} from './authentication/authentication.module';
-import {IconRegistryModule} from './components';
+import {HeaderModule, IconRegistryModule} from './components';
 import {HomeComponent} from './home/home.component';
 import {SensorComponent} from './sensor/sensor.component';
 import {SwitchComponent} from './switch/switch.component';
@@ -24,7 +24,8 @@ import {SwitchComponent} from './switch/switch.component';
     AuthenticationModule,
     BrowserModule,
     FormsModule,
-    IconRegistryModule
+    IconRegistryModule,
+    HeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

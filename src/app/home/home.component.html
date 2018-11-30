@@ -1,46 +1,49 @@
-<select [(ngModel)]="selectedHost"
-        (change)="getHardwareForHost()">
-  <option hidden selected></option>
-  <ng-container *ngFor="let host of hosts">
-    <option *ngIf="host.status === 'online'" [ngValue]="host">
-      <span>{{ host.name }}</span>
-    </option>
-  </ng-container>
-</select>
+<section class="scroll-container">
 
-<select *ngIf="sensors?.length > 0"
-        [(ngModel)]="selectedSensor"
-        (change)="doLog(selectedSensor)">
-  <option hidden selected></option>
-  <ng-container *ngFor="let sensor of sensors">
-    <option [ngValue]="sensor">
-      <span>{{ sensor.name }}</span>
-    </option>
-  </ng-container>
-</select>
+  <select [(ngModel)]="selectedHost"
+          (change)="getHardwareForHost()">
+    <option hidden selected></option>
+    <ng-container *ngFor="let host of hosts">
+      <option *ngIf="host.status === 'online'" [ngValue]="host">
+        <span>{{ host.name }}</span>
+      </option>
+    </ng-container>
+  </select>
 
-<select *ngIf="switches?.length > 0"
-        [(ngModel)]="selectedSwitch"
-        (change)="doLog(selectedSwitch)">
-  <option hidden selected></option>
-  <ng-container *ngFor="let switch of switches">
-    <option [ngValue]="switch">
-      <span>{{ switch.name }}</span>
-    </option>
-  </ng-container>
-</select>
+  <select *ngIf="sensors?.length > 0"
+          [(ngModel)]="selectedSensor"
+          (change)="doLog(selectedSensor)">
+    <option hidden selected></option>
+    <ng-container *ngFor="let sensor of sensors">
+      <option [ngValue]="sensor">
+        <span>{{ sensor.name }}</span>
+      </option>
+    </ng-container>
+  </select>
 
-<section>
-  <pre>{{ selectedHost | json }}</pre>
-  <pre>{{ selectedSensor | json }}</pre>
-  <pre>{{ selectedSwitch | json }}</pre>
+  <select *ngIf="switches?.length > 0"
+          [(ngModel)]="selectedSwitch"
+          (change)="doLog(selectedSwitch)">
+    <option hidden selected></option>
+    <ng-container *ngFor="let switch of switches">
+      <option [ngValue]="switch">
+        <span>{{ switch.name }}</span>
+      </option>
+    </ng-container>
+  </select>
+
+  <section>
+    <pre>{{ selectedHost | json }}</pre>
+    <pre>{{ selectedSensor | json }}</pre>
+    <pre>{{ selectedSwitch | json }}</pre>
+  </section>
+
+  <p>
+    <a [routerLink]="['/switch/add']" routerLinkActive="active">Add Switch</a>
+    <a [routerLink]="['/sensor/add']" routerLinkActive="active">Add Sensor</a>
+  </p>
+
+  <button (click)="logout()">Logout</button>
+
+  <router-outlet></router-outlet>
 </section>
-
-<p>
-  <a [routerLink]="['/switch/add']" routerLinkActive="active">Add Switch</a>
-  <a [routerLink]="['/sensor/add']" routerLinkActive="active">Add Sensor</a>
-</p>
-
-<button (click)="logout()">Logout</button>
-
-<router-outlet></router-outlet>

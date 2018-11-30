@@ -1,9 +1,9 @@
 @import 'variables';
 
 :host {
-  color: $hb-white;
+  background-color: $hb-background-to-color;
   display: flex;
-  flex: 1;
   flex-direction: column;
   height: 100%;
+  position: relative;
 }
