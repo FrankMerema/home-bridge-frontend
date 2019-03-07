@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   selectedSwitch: Switch;
   sensors: Array<Sensor>;
   switches: Array<Switch>;
+  QRlink: string;
 
   constructor(private hostService: HostService,
               private sensorService: SensorService,
@@ -45,6 +46,13 @@ export class HomeComponent implements OnInit {
       this.sensors = sensors;
       this.switches = switches;
     });
+  }
+
+  get2FactorAuthImage(): void {
+    this.authenticationService.get2FAuthQRCode()
+      .subscribe(url => {
+        this.QRlink = url;
+      });
   }
 
   doLog(selectedItem: any): void {

@@ -28,6 +28,10 @@ export class AuthenticationService {
     return this.http.post<User>(`/api/user`, user);
   }
 
+  get2FAuthQRCode(): Observable<string> {
+    return this.http.post<string>(`/api/user/test`, {});
+  }
+
   logout(): Observable<boolean> {
     return this.http.post<boolean>(`/api/user/logout`, null);
   }
