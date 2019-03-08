@@ -1,7 +1,7 @@
-import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/index';
-import {Sensor} from '../models/sensor.model';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Sensor } from '@shared/models';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

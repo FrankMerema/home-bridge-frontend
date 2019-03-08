@@ -1,8 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {Host} from '../api/models/host.model';
-import {Switch} from '../api/models/switch.model';
-import {HostService} from '../api/services/host.service';
-import {SwitchService} from '../api/services/switch.service';
+import { Component, OnInit } from '@angular/core';
+import { HostService, SwitchService } from '@shared/api';
+import { Host, Switch } from '@shared/models';
 
 @Component({
   selector: 'hb-switch',
@@ -26,7 +24,6 @@ export class SwitchComponent implements OnInit {
   }
 
   onSwitchSubmit(): void {
-    console.log('submitting');
     this.switchService.addSwitch(this.switchModel.pin, this.switchModel.host, this.switchModel.name)
       .subscribe(() => {
         this.switchModel = {host: '', name: '', pin: null};

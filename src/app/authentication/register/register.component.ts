@@ -1,18 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
-import {AuthenticationService} from '../../api/services/authentication.service';
-
-export const checkEqualPasswordValidator: ValidatorFn = (control: FormGroup): ValidationErrors | null => {
-  const password = control.get('password');
-  const passwordRepeated = control.get('passwordRepeated');
-
-  if (password.pristine || passwordRepeated.pristine) {
-    return null;
-  }
-
-  return password && passwordRepeated && password.value !== passwordRepeated.value ? {invalid: true} : null;
-};
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '@shared/api';
+import { checkEqualPasswordValidator } from '@shared/validators';
 
 @Component({
   selector: 'hb-register',

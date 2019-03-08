@@ -1,13 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {zip} from 'rxjs/index';
-import {Host} from '../api/models/host.model';
-import {Sensor} from '../api/models/sensor.model';
-import {Switch} from '../api/models/switch.model';
-import {AuthenticationService} from '../api/services/authentication.service';
-import {HostService} from '../api/services/host.service';
-import {SensorService} from '../api/services/sensor.service';
-import {SwitchService} from '../api/services/switch.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService, HostService, SensorService, SwitchService } from '@shared/api';
+import { Host, Sensor, Switch } from '@shared/models';
+import { zip } from 'rxjs';
 
 @Component({
   selector: 'hb-home',
@@ -49,7 +44,7 @@ export class HomeComponent implements OnInit {
   }
 
   get2FactorAuthImage(): void {
-    this.authenticationService.get2FAuthQRCode()
+    this.authenticationService.get2FAuthQRCode(this.authenticationService.currentUser.username)
       .subscribe(url => {
         this.QRlink = url;
       });

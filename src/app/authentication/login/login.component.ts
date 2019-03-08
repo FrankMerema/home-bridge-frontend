@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {AuthenticationService} from '../../api/services/authentication.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from '@shared/api';
 
 @Component({
   selector: 'hb-login',
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   onLoginSubmit(username: string, password: string): void {
     this.authenticationService.authenticate(username, password)
-      .subscribe(user => {
+      .subscribe(() => {
         this.router.navigate([this.returnUrl]);
       }, response => {
         this.error = response.error;

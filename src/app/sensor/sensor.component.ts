@@ -1,10 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {Host} from '../api/models/host.model';
-import {Sensor} from '../api/models/sensor.model';
-import {Switch} from '../api/models/switch.model';
-import {HostService} from '../api/services/host.service';
-import {SensorService} from '../api/services/sensor.service';
-import {SwitchService} from '../api/services/switch.service';
+import { Component, OnInit } from '@angular/core';
+import { HostService, SensorService, SwitchService } from '@shared/api';
+import { Host, Sensor, Switch } from '@shared/models';
 
 @Component({
   selector: 'hb-sensor',
@@ -30,7 +26,6 @@ export class SensorComponent implements OnInit {
   }
 
   onSensorSubmit(): void {
-    console.log('submitting');
     this.sensorService.addSensor(this.sensorModel.pin, this.sensorModel.host, this.sensorModel.name, this.sensorModel.targetId)
       .subscribe(() => {
         this.sensorModel = {host: '', name: '', pin: null};

@@ -1,19 +1,33 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "outDir": "./dist/out-tsc",
+    "paths": {
+      "@shared/api": [
+        "app/api/services"
+      ],
+      "@shared/components": [
+        "app/shared/components"
+      ],
+      "@shared/models": [
+        "app/api/models"
+      ],
+      "@shared/validators": [
+        "app/shared/validators"
+      ]
+    },
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
+    "target": "es2015",
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
-      "es2017",
+      "es2018",
       "dom"
     ],
     "plugins": [
