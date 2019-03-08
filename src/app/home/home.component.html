@@ -49,5 +49,8 @@
 
   <img *ngIf="QRlink" [src]="QRlink">
 
+  <input type="text" [(ngModel)]="code"/>
+  <button class="btn" (click)="verify2FactorAuthCode()">Submit</button>
+
   <router-outlet></router-outlet>
 </section>

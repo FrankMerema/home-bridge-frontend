@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
   switches: Array<Switch>;
   QRlink: string;
 
+  code: string;
+
   constructor(private hostService: HostService,
               private sensorService: SensorService,
               private switchService: SwitchService,
@@ -47,6 +49,13 @@ export class HomeComponent implements OnInit {
     this.authenticationService.get2FAuthQRCode(this.authenticationService.currentUser.username)
       .subscribe(url => {
         this.QRlink = url;
+      });
+  }
+
+  verify2FactorAuthCode(): void {
+    this.authenticationService.verify2FactorAuthCode(this.authenticationService.currentUser.username, this.code)
+      .subscribe(verified => {
+        console.log(verified);
       });
   }
 
