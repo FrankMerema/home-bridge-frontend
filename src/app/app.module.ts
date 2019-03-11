@@ -12,20 +12,20 @@ import { SensorComponent } from './sensor/sensor.component';
 import { SwitchComponent } from './switch/switch.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SwitchComponent,
-    SensorComponent,
-    HomeComponent
-  ],
   imports: [
-    ApiModule,
+    ApiModule.forRoot(),
     AppRoutingModule,
     AuthenticationModule,
     BrowserModule,
     FormsModule,
     IconRegistryModule,
     HeaderModule
+  ],
+  declarations: [
+    AppComponent,
+    SwitchComponent,
+    SensorComponent,
+    HomeComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

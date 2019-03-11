@@ -1,0 +1,20 @@
+<header class="authenticate-header">
+  <h1>Two-factor authentication</h1>
+</header>
+
+<section class="authenticate-body">
+  <div class="input-fields">
+    <div class="floating-label-input">
+      <input type="text" maxlength="6" name="authcode" id="authcode" placeholder="Two-factor code" autofocus="true"
+             autocomplete="false">
+      <label for="authcode">Two-factor code</label>
+    </div>
+    <button class="btn btn-primary">
+      Verify
+    </button>
+  </div>
+  <div class="description">
+    <hb-icon [name]="'mobile'"></hb-icon>
+    <span>Open the two-factor authentication app on your device to view your authentication code and verify your identity.</span>
+  </div>
+</section>

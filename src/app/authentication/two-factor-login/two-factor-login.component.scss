@@ -1,0 +1,48 @@
+@import 'variables';
+@import 'mixins/size';
+
+:host {
+  justify-content: center;
+  background: $hb-background-color;
+  color: $hb-white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: $hb-gutter-size;
+
+  .authenticate-header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $hb-gutter-size * 2;
+    text-align: center;
+  }
+
+  .authenticate-body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    .input-fields {
+      border: 2px solid $hb-white;
+      border-radius: $hb-gutter-size;
+      padding: $hb-gutter-size $hb-gutter-size * 2 $hb-gutter-size * 2;
+      max-width: 360px;
+    }
+
+    .description {
+      display: flex;
+      font-size: 14px;
+      margin-top: $hb-gutter-size * 2;
+      max-width: 320px;
+
+      hb-icon {
+        @include size(10px, 16px);
+        fill: $hb-white;
+        flex-shrink: 0;
+        margin-top: 5px; // Visual fix
+        margin-right: $hb-gutter-size-small;
+      }
+    }
+  }
+}

@@ -46,14 +46,14 @@ export class HomeComponent implements OnInit {
   }
 
   get2FactorAuthImage(): void {
-    this.authenticationService.get2FAuthQRCode(this.authenticationService.currentUser.username)
+    this.authenticationService.get2FAuthQRCode()
       .subscribe(url => {
         this.QRlink = url;
       });
   }
 
   verify2FactorAuthCode(): void {
-    this.authenticationService.verify2FactorAuthCode(this.authenticationService.currentUser.username, this.code)
+    this.authenticationService.verify2FactorAuthCode(this.code)
       .subscribe(verified => {
         console.log(verified);
       });

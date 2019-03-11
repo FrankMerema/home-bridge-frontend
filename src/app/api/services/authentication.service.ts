@@ -26,15 +26,15 @@ export class AuthenticationService {
 
   register(user: { username: string, password: string, passwordRepeated: string }): Observable<User> {
     return this.http.post<User>(`/api/user`, user)
-      .pipe(map(user => this.currentUser = user));
+      .pipe(map(u => this.currentUser = u));
   }
 
-  get2FAuthQRCode(username: string): Observable<string> {
-    return this.http.post<string>(`/api/user/add2factor/${username}`, {username: username});
+  get2FAuthQRCode(): Observable<string> {
+    return this.http.get<string>(`/api/user/add2factor/${this.currentUser.username}`);
   }
 
-  verify2FactorAuthCode(username: string, token: string): Observable<{ verified: boolean }> {
-    return this.http.get<{ verified: boolean }>(`/api/user/verify2factor/${username}/${token}`);
+  verify2FactorAuthCode(token: string): Observable<{ verified: boolean }> {
+    return this.http.get<{ verified: boolean }>(`/api/user/verify2factor/${this.currentUser.username}/${token}`);
   }
 
   logout(): Observable<boolean> {

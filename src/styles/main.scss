@@ -1,7 +1,9 @@
+// EXTERNALS
+@import '~normalize.css/normalize.css';
+// HELPERS / DEFAULT
 @import 'constants/mixins';
 @import 'constants/variables';
 // BASE
-@import 'base/reset';
 @import 'base/base';
 @import 'base/typography';
 // COMPONENTS
