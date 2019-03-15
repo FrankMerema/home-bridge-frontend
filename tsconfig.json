@@ -5,13 +5,16 @@
     "outDir": "./dist/out-tsc",
     "paths": {
       "@shared/api": [
-        "app/api/services"
+        "app/shared/api"
       ],
       "@shared/components": [
         "app/shared/components"
       ],
+      "@shared/guards": [
+        "app/shared/guards"
+      ],
       "@shared/models": [
-        "app/api/models"
+        "app/shared/models"
       ],
       "@shared/validators": [
         "app/shared/validators"

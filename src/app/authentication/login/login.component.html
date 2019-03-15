@@ -6,7 +6,8 @@
   <form class="login-form" (ngSubmit)="onLoginSubmit(username.value, password.value)" #loginForm="ngForm"
         autocomplete="off">
     <div class="floating-label-input">
-      <input #username type="text" name="username" id="username" placeholder="Username">
+      <input #username type="text" name="username" id="username" placeholder="Username" autofocus="true"
+             autocomplete="false">
       <label for="username">Username</label>
       <hb-icon [name]="'user-profile'"></hb-icon>
     </div>
@@ -17,7 +18,7 @@
     </div>
     <span class="error-message" *ngIf="error">
         {{ error }}
-      </span>
+    </span>
     <button type="submit" class="btn btn-primary">
       LOG IN
     </button>

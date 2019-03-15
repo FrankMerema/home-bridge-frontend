@@ -3,12 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '@shared/api';
 
 @Component({
-  selector: 'hb-two-factor-login',
-  templateUrl: './two-factor-login.component.html',
-  styleUrls: ['./two-factor-login.component.scss']
+  selector: 'hb-two-factor-register',
+  templateUrl: './two-factor-register.component.html',
+  styleUrls: ['./two-factor-register.component.scss']
 })
-export class TwoFactorLoginComponent implements OnInit {
+export class TwoFactorRegisterComponent implements OnInit {
 
+  QRLink: string;
   error: string;
 
   constructor(private route: ActivatedRoute,
@@ -19,6 +20,11 @@ export class TwoFactorLoginComponent implements OnInit {
   ngOnInit(): void {
     if (!this.authenticationService.currentUser) {
       this.router.navigate(['/login'], {queryParamsHandling: 'preserve'});
+    } else {
+      this.authenticationService.get2FAuthQRCode()
+        .subscribe(link => {
+          this.QRLink = link;
+        });
     }
   }
 

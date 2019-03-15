@@ -1,8 +1,11 @@
 <header class="authenticate-header">
+  <h1>Setup</h1>
   <h1>Two-factor authentication</h1>
 </header>
 
 <section class="authenticate-body">
+  <img class="qr-image" *ngIf="QRLink" [src]="QRLink">
+
   <form class="auth-form" (ngSubmit)="verifyAuthToken(code.value)" #authForm="ngForm">
     <div class="floating-label-input">
       <input #code type="text" maxlength="6" name="authcode" id="authcode" placeholder="Two-factor code"
@@ -18,6 +21,6 @@
   </form>
   <div class="description">
     <hb-icon [name]="'mobile'"></hb-icon>
-    <span>Open the two-factor authentication app on your device to view your authentication code and verify your identity.</span>
+    <span>Open the two-factor authentication app on your device to scan the qr code and verify your identity.</span>
   </div>
 </section>

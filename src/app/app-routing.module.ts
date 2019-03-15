@@ -1,12 +1,13 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {AuthGuard} from './authentication/auth.guard';
-import {LoginComponent} from './authentication/login/login.component';
-import {RegisterComponent} from './authentication/register/register.component';
-import {TwoFactorLoginComponent} from './authentication/two-factor-login/two-factor-login.component';
-import {HomeComponent} from './home/home.component';
-import {SensorComponent} from './sensor/sensor.component';
-import {SwitchComponent} from './switch/switch.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '@shared/guards';
+import { LoginComponent } from './authentication/login/login.component';
+import { RegisterComponent } from './authentication/register/register.component';
+import { TwoFactorLoginComponent } from './authentication/two-factor-login/two-factor-login.component';
+import { TwoFactorRegisterComponent } from './authentication/two-factor-register/two-factor-register.component';
+import { HomeComponent } from './home/home.component';
+import { SensorComponent } from './sensor/sensor.component';
+import { SwitchComponent } from './switch/switch.component';
 
 const routes: Routes = [{
   path: '',
@@ -25,9 +26,11 @@ const routes: Routes = [{
   path: 'login',
   component: LoginComponent
 }, {
-  path: 'authenticate',
-  component: TwoFactorLoginComponent,
-  canActivate: [AuthGuard]
+  path: 'two-factor-authenticate',
+  component: TwoFactorLoginComponent
+}, {
+  path: 'two-factor-authenticate-create',
+  component: TwoFactorRegisterComponent
 }, {
   path: 'register',
   component: RegisterComponent,
@@ -38,7 +41,7 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {paramsInheritanceStrategy: 'always'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

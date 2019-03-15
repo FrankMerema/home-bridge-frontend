@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService } from '@shared/api';
 
@@ -7,27 +7,23 @@ import { AuthenticationService } from '@shared/api';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   error: string;
-
-  private returnUrl: string;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private authenticationService: AuthenticationService) {
   }
 
-  ngOnInit() {
-    this.route.queryParamMap.subscribe(queryParams => {
-      this.returnUrl = queryParams.get('returnUrl') || '/';
-    });
-  }
-
   onLoginSubmit(username: string, password: string): void {
     this.authenticationService.authenticate(username, password)
-      .subscribe(() => {
-        this.router.navigate([this.returnUrl]);
+      .subscribe(result => {
+        if (result.hasTwoFactorEnabled) {
+          this.router.navigate(['./two-factor-authenticate'], {queryParamsHandling: 'preserve'});
+        } else {
+          this.router.navigate(['./two-factor-authenticate-create'], {queryParamsHandling: 'preserve'});
+        }
       }, response => {
         this.error = response.error;
       });
