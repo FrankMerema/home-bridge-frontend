@@ -45,12 +45,5 @@
 
   <button (click)="logout()">Logout</button>
 
-  <button class="btn btn-primary" (click)="get2FactorAuthImage()">Get QR</button>
-
-  <img *ngIf="QRlink" [src]="QRlink">
-
-  <input type="text" [(ngModel)]="code"/>
-  <button class="btn" (click)="verify2FactorAuthCode()">Submit</button>
-
   <router-outlet></router-outlet>
 </section>
