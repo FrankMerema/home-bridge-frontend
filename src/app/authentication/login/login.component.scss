@@ -17,8 +17,15 @@
     max-width: 260px;
 
     .login-header {
+      align-items: center;
       display: flex;
       flex-direction: column;
+
+      hb-icon {
+        @include size($hb-gutter-size * 10);
+        fill: $hb-white;
+        margin-bottom: $hb-gutter-size;
+      }
 
       h2 {
         text-align: center;
