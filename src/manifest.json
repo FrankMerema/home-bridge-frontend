@@ -1,8 +1,8 @@
 {
   "name": "home-bridge-frontend",
-  "short_name": "home-bridge-frontend",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "short_name": "Home-Bridge",
+  "theme_color": "#2c4259",
+  "background_color": "#1b3045",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
