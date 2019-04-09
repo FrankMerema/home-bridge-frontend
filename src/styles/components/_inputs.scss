@@ -41,6 +41,7 @@ input {
     color: $hb-input-not-active;
     display: block;
     margin-bottom: 0;
+    user-select: none;
     transition: all 100ms ease-in-out;
     width: 100%;
   }
@@ -49,6 +50,7 @@ input {
     &:focus {
       ~ label {
         color: $hb-white;
+        user-select: none;
       }
     }
 
@@ -61,6 +63,7 @@ input {
         font-size: 12px;
         padding-bottom: 4px;
         padding-top: 0;
+        user-select: none;
       }
     }
 
@@ -75,6 +78,7 @@ input {
     &::placeholder {
       color: transparent;
     }
+
     /* stylelint-enable */
   }
 }
