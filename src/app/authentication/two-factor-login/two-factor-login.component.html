@@ -1,11 +1,11 @@
 <header class="authenticate-header">
-  <h1>Two-factor authentication</h1>
+  <hb-icon [name]="'logo'"></hb-icon>
+  <h2>Two-factor authentication</h2>
 </header>
-
 <section class="authenticate-body">
-  <form class="auth-form" (ngSubmit)="verifyAuthToken(code.value)" #authForm="ngForm">
+  <form class="auth-form" (ngSubmit)="verifyAuthToken(code.value)">
     <div class="floating-label-input">
-      <input #code type="text" maxlength="6" name="authcode" id="authcode" placeholder="Two-factor code"
+      <input #code type="text" maxlength="6" name="authcode" id="authcode" required
              autofocus="true" autocomplete="false">
       <label for="authcode">Two-factor code</label>
     </div>

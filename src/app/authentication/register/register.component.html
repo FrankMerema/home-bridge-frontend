@@ -1,32 +1,32 @@
 <section class="register-content">
   <header class="register-header">
-    <h2>Header title</h2>
-    <img src="">
+    <hb-icon [name]="'logo'"></hb-icon>
+    <h2>Merema's Home</h2>
   </header>
   <form class="register-form" [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()" autocomplete="off">
     <div class="floating-label-input">
       <input type="text"
              id="username"
              formControlName="username"
-             placeholder="Username">
+             required>
       <label for="username">Username</label>
       <hb-icon [name]="'user-profile'"></hb-icon>
     </div>
     <div class="floating-label-input">
       <input type="password"
              id="password"
-             placeholder="Password"
              autocomplete="false"
-             formControlName="password">
+             formControlName="password"
+             required>
       <label for="password">Password</label>
       <hb-icon [name]="'password'"></hb-icon>
     </div>
     <div class="floating-label-input">
       <input type="password"
              id="password-repeat"
-             placeholder="Repeat password"
              autocomplete="false"
-             formControlName="passwordRepeated">
+             formControlName="passwordRepeated"
+             required>
       <label for="password-repeat">Repeat password</label>
       <hb-icon [name]="'password'"></hb-icon>
     </div>
@@ -36,7 +36,7 @@
     </span>
     <span class="error-message" *ngIf="registerForm.errors?.invalid && (registerForm.touched || registerForm.dirty)">
         Passwords don't match!
-      </span>
+    </span>
 
     <button type="submit"
             [disabled]="!registerForm.dirty || !registerForm.valid"

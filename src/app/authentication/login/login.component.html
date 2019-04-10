@@ -6,13 +6,13 @@
   <form class="login-form" (ngSubmit)="onLoginSubmit(username.value, password.value)" #loginForm="ngForm"
         autocomplete="off">
     <div class="floating-label-input">
-      <input #username type="text" name="username" id="username" placeholder="Username" autofocus="true"
-             autocomplete="false">
+      <input #username type="text" name="username" id="username" autofocus="true"
+             autocomplete="false" required>
       <label for="username">Username</label>
       <hb-icon [name]="'user-profile'"></hb-icon>
     </div>
     <div class="floating-label-input">
-      <input #password type="password" name="password" id="password" placeholder="Password" autocomplete="false">
+      <input #password type="password" name="password" id="password" autocomplete="false" required>
       <label for="password">Password</label>
       <hb-icon [name]="'password'"></hb-icon>
     </div>

@@ -6,8 +6,8 @@
   background: $hb-background-color;
   color: $hb-white;
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
-  height: 100%;
   justify-content: center;
 
   .register-content {
@@ -16,9 +16,19 @@
     margin: $hb-gutter-size;
 
     .register-header {
+      align-items: center;
       display: flex;
       flex-direction: column;
-      text-align: center;
+
+      hb-icon {
+        @include size($hb-gutter-size * 10);
+        fill: $hb-white;
+        margin-bottom: $hb-gutter-size;
+      }
+
+      h2 {
+        text-align: center;
+      }
     }
 
     .register-form {
@@ -35,7 +45,7 @@
 
         hb-icon {
           @include size(14px);
-          @include position(absolute, 18px 0 0 12px);
+          @include position(absolute, 0 0 14px 8px);
           fill: $hb-input-not-active;
         }
 

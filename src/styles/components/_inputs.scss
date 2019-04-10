@@ -30,55 +30,39 @@ input {
   margin-bottom: 1rem;
   position: relative;
 
-  > input,
-  > label {
-    padding: 12px;
-  }
-
-  > label {
-    @include position(absolute, 0px 0 0 0px);
-    border: 1px solid transparent;
+  label {
+    @include position(absolute, $hb-gutter-size 0 0 0px);
     color: $hb-input-not-active;
-    display: block;
-    margin-bottom: 0;
-    user-select: none;
-    transition: all 100ms ease-in-out;
-    width: 100%;
+    font-size: $hb-font-size;
+    line-height: 1;
+    padding: $hb-gutter-size-small;
+    pointer-events: none;
+    transition: 0.2s ease all;
   }
 
   input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $hb-input-not-active;
+    color: $hb-white;
+    display: block;
+    font-size: $hb-font-size;
+    margin-top: $hb-gutter-size;
+    padding: $hb-gutter-size-small;
+
     &:focus {
-      ~ label {
+      border-bottom-color: $hb-white;
+      outline: none;
+    }
+
+    &:focus,
+    &:valid {
+      & ~ label {
         color: $hb-white;
-        user-select: none;
-      }
-    }
-
-    &:not(:placeholder-shown) {
-      padding-bottom: 4px;
-      padding-top: calc(12px + 12px * (2 / 3));
-
-      ~ label {
-        color: $hb-input-not-active;
         font-size: 12px;
-        padding-bottom: 4px;
-        padding-top: 0;
-        user-select: none;
+        padding-top: $hb-gutter-size-small / 4;
+        top: 0;
       }
     }
-
-    /* stylelint-disable */
-    &::-webkit-input-placeholder {
-      color: transparent;
-    }
-
-    &:-ms-input-placeholder,
-    &::-ms-input-placeholder,
-    &::-moz-placeholder,
-    &::placeholder {
-      color: transparent;
-    }
-
-    /* stylelint-enable */
   }
 }
