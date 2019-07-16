@@ -34,8 +34,12 @@ export class RegisterComponent implements OnInit {
 
   onRegisterSubmit(): void {
     this.authenticationService.register(this.registerForm.value)
-      .subscribe(() => {
-        this.router.navigate(['/']);
+      .subscribe(result => {
+        if (result.hasTwoFactorEnabled) {
+          this.router.navigate(['./two-factor-authenticate'], {queryParamsHandling: 'preserve'});
+        } else {
+          this.router.navigate(['./two-factor-authenticate-create'], {queryParamsHandling: 'preserve'});
+        }
       }, response => {
         this.error = response.error;
       });

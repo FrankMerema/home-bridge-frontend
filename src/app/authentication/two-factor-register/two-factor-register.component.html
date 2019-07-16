@@ -4,12 +4,12 @@
 </header>
 
 <section class="authenticate-body">
-  <img class="qr-image" *ngIf="QRLink" [src]="QRLink">
+  <img class="qr-image" alt="two factor auth qr code" *ngIf="QRLink" [src]="QRLink">
 
-  <form class="auth-form" (ngSubmit)="verifyAuthToken(code.value)" #authForm="ngForm">
+  <form class="auth-form" (ngSubmit)="verifyAuthToken(code.value)">
     <div class="floating-label-input">
-      <input #code type="text" maxlength="6" name="authcode" id="authcode" placeholder="Two-factor code"
-             autofocus="true" autocomplete="false">
+      <input #code type="text" maxlength="6" name="authcode" id="authcode"
+             autofocus="true" autocomplete="false" required>
       <label for="authcode">Two-factor code</label>
     </div>
     <span class="error-message" *ngIf="error">

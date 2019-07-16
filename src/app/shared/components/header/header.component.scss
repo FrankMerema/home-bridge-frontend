@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins/size';
 
 :host {
   align-items: center;
@@ -15,7 +16,9 @@
     margin: 0;
   }
 
-  .btn {
-    margin-left: auto;
+  hb-icon {
+    @include size($hb-gutter-size-small * 3);
+    fill: $hb-white;
+    margin: $hb-gutter-size-small $hb-gutter-size-small $hb-gutter-size-small 0;
   }
 }

@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SensorComponent } from './sensor/sensor.component';
 import { SwitchComponent } from './switch/switch.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   imports: [
@@ -19,7 +21,8 @@ import { SwitchComponent } from './switch/switch.component';
     BrowserModule,
     FormsModule,
     IconRegistryModule,
-    HeaderModule
+    HeaderModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   declarations: [
     AppComponent,
