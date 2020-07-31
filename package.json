@@ -49,6 +49,6 @@
     "stylelint-order": "2.1.0",
     "ts-node": "8.10.2",
     "tslint": "5.20.1",
-    "typescript": "3.1.6"
+    "typescript": "3.9.7"
   }
 }
